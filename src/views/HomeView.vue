@@ -41,7 +41,7 @@ export default {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -80,9 +80,9 @@ export default {
 .info a {
   background: var(--secondary);
   color: var(--dark);
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 10px;
-  margin-top: 10%;
+  margin: 2rem 0;
   display: flex;
   gap: 1rem;
   align-items: center;
