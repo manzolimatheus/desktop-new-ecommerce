@@ -56,9 +56,8 @@ export default {
   methods: {
     saveUser(): void {
       this.setUser(this.formUser);
-      console.log(this.user);
       this.finishSetup();
-      this.$router.push("/store");
+      this.$router.push("/store")
     },
   },
   mounted() {

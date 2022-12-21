@@ -17,7 +17,6 @@ export const useCart = defineStore({
   }),
   actions: {
     addToCart(product: Product) {
-
       const productAlreadyExists = this.cart.products.find(
         (p) => p.id === product.id
       );
@@ -28,13 +27,38 @@ export const useCart = defineStore({
       }
 
       this.cart.products.push(product);
-      this.cart.total += product.price;
+
+      console.log(this.cart.total)
+
+      if (product.promoPrice) {
+        this.cart.total += product.promoPrice;
+      } else {
+        this.cart.total += product.price;
+      }
+
+      console.log(product);
+      console.log(this.cart.total);
+
+      localStorage.setItem("cart", JSON.stringify(this.cart));
     },
     removeFromCart(product: Product) {
       this.cart.products = this.cart.products.filter(
         (p) => p.id !== product.id
       );
-      this.cart.total -= product.price;
+
+      if (product.promoPrice) {
+        this.cart.total -= product.promoPrice;
+      } else {
+        this.cart.total -= product.price;
+      }
+
+      localStorage.setItem("cart", JSON.stringify(this.cart));
+    },
+    getLocalStorageCart(): void {
+      const cart = localStorage.getItem("cart") || null;
+      if (cart) {
+        this.cart = JSON.parse(cart);
+      }
     },
   },
 });

@@ -26,7 +26,7 @@
           <input
             type="text"
             v-model="fetchAddress.cep"
-            placeholder="Rua das Flores, 13"
+            placeholder="13848495"
             id="cep"
           />
         </label>
@@ -44,7 +44,7 @@
           <input
             type="text"
             v-model="fetchAddress.complemento"
-            placeholder="Rua das Flores, 13"
+            placeholder="Casa"
             id="complemento"
           />
         </label>
@@ -53,7 +53,7 @@
           <input
             type="text"
             v-model="fetchAddress.bairro"
-            placeholder="Rua das Flores, 13"
+            placeholder="Jardim Suécia"
             id="bairro"
           />
         </label>
@@ -62,16 +62,16 @@
           <input
             type="text"
             v-model="fetchAddress.localidade"
-            placeholder="Rua das Flores, 13"
+            placeholder="Mogi Mirim"
             id="localidade"
           />
         </label>
         <label for="uf" class="form-input">
-          <h4>UF</h4>
+          <h4>Estado</h4>
           <input
             type="text"
             v-model="fetchAddress.uf"
-            placeholder="Rua das Flores, 13"
+            placeholder="SP"
             id="uf"
           />
         </label>
@@ -128,6 +128,9 @@ export default {
       this.setAddress(this.fetchAddress);
       this.incrementStep();
     },
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
 };
 </script>

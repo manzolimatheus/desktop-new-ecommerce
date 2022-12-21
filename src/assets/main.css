@@ -92,3 +92,26 @@ input {
 .p-2 {
     padding: 2%;
 }
+.mt-2 {
+    margin-top: 2%;
+}
+
+.mb-2 {
+    margin-bottom: 2%;
+}
+
+::selection {
+    background-color: var(--secondary);
+    color: var(--dark);
+}
+
+.display-flex {
+    display: flex;
+}
+
+.display-flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

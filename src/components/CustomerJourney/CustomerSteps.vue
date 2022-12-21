@@ -52,7 +52,6 @@ export default {
 </script>
 
 <style scoped>
-
 .back-button {
   background: none;
   border: none;
@@ -136,5 +135,4 @@ export default {
     padding: 2rem;
   }
 }
-
 </style>

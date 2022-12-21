@@ -79,6 +79,7 @@ export default {
         description: this.description,
         price: this.price,
         featuredText: this.featuredText,
+        promoPrice: this.promoPrice,
       };
 
       this.addToCart(product);
@@ -155,6 +156,7 @@ s {
 .card .price {
   color: #2f2f2f;
   font-size: 30pt;
+  font-weight: bolder;
 }
 
 .card > .add-to-cart-button {

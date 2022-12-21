@@ -1,9 +1,15 @@
 <template>
   <div class="space">
     <div class="old-tv"></div>
-    <BillAlien :animated="true"/>
+    <BillAlien :animated="true" />
     <div class="info">
       <h1>A <strong>INTERNET</strong> que vêm de outro planeta!</h1>
+      <img
+        src="/img/preco.png"
+        alt="Promoção da Desktop"
+        width="500"
+        class="mt-2"
+      />
       <RouterLink to="/journey">
         <span>Quero Conhecer</span>
         <ion-icon name="arrow-forward-outline"></ion-icon>

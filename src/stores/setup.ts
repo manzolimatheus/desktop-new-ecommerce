@@ -1,5 +1,7 @@
 import { ref, computed } from "vue";
 import { defineStore } from "pinia";
+import { useCart } from "./cart";
+
 
 export interface Address {
   cep: string;
@@ -23,6 +25,7 @@ export interface User {
 export const useSteps = defineStore({
   id: "steps",
   state: () => ({
+    isAuth: false as boolean,
     currentStep: 0 as number,
     address: {
       cep: "",
@@ -53,15 +56,43 @@ export const useSteps = defineStore({
     },
     setAddress(address: Address): void {
       this.address = address;
+      localStorage.setItem("address", JSON.stringify(address));
     },
     setInfoText(text: string): void {
       this.infoText = text;
     },
     setUser(user: User): void {
       this.user = user;
+      localStorage.setItem("user", JSON.stringify(user));
+      this.isAuth = true;
     },
     finishSetup(): void {
       this.currentStep = 0;
+    },
+    resetData(): void {
+      localStorage.removeItem("address");
+      localStorage.removeItem("user");
+      localStorage.removeItem("cart");
+      useCart().cart.products = [];
+      useCart().cart.total = 0;
+      this.isAuth = false;
+      this.address = {
+        cep: "",
+        logradouro: "",
+        complemento: "",
+        bairro: "",
+        localidade: "",
+        uf: "",
+        ibge: "",
+        gia: "",
+        ddd: "",
+        siafi: "",
+      };
+      this.user = {
+        name: "Visitante",
+        email: "",
+        phone: "",
+      };
     }
   },
 });

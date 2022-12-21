@@ -2,7 +2,13 @@
   <div class="container">
     <Carousel :images="carousel.carousel.items" />
     <div class="d-flex">
-      <h1>Olá, {{ steps.user.name.split(" ")[0] }} 👽🖖</h1>
+      <div class="d-flex-column">
+        <h1>Olá, {{ steps.user.name.split(" ")[0] }} 👽🖖</h1>
+        <h5>
+          <ion-icon name="location-outline"></ion-icon>
+          <span class="address">{{ stringAddress }}</span>
+        </h5>
+      </div>
       <CartPanel />
     </div>
     <ProductCarousel
@@ -45,6 +51,11 @@ export default {
     CartPanel,
     Carousel,
   },
+  computed: {
+    stringAddress(): string {
+      return `${this.steps.address.cep} ${this.steps.address.logradouro} ${this.steps.address.bairro} ${this.steps.address.uf}`;
+    },
+  },
 };
 </script>
 
@@ -57,6 +68,11 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.address {
+  font-size: 0.8rem;
+  color: #464646;
 }
 
 @media (max-width: 768px) {
