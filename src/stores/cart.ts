@@ -1,4 +1,3 @@
-import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import type { type Product } from "./product.js";
 
@@ -28,7 +27,7 @@ export const useCart = defineStore({
 
       this.cart.products.push(product);
 
-      console.log(this.cart.total)
+      console.log(this.cart.total);
 
       if (product.promoPrice) {
         this.cart.total += product.promoPrice;

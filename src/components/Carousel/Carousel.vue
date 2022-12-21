@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  name: "CarouselBanner",
   props: {
     images: {
       type: Array,

@@ -22,7 +22,8 @@ const router = createRouter({
       path: "/journey",
       name: "Jornada",
       beforeEnter: (to, from, next) => {
-        const isAuth = localStorage.getItem("user") && localStorage.getItem("address");
+        const isAuth =
+          localStorage.getItem("user") && localStorage.getItem("address");
         if (!isAuth) {
           next();
         } else {
@@ -35,7 +36,8 @@ const router = createRouter({
       path: "/store",
       name: "Loja",
       beforeEnter: (to, from, next) => {
-        const isAuth = localStorage.getItem("user") && localStorage.getItem("address");
+        const isAuth =
+          localStorage.getItem("user") && localStorage.getItem("address");
         if (isAuth) {
           next();
         } else {
@@ -48,7 +50,8 @@ const router = createRouter({
       path: "/cart",
       name: "Carrinho",
       beforeEnter: (to, from, next) => {
-        const isAuth = localStorage.getItem("user") && localStorage.getItem("address");
+        const isAuth =
+          localStorage.getItem("user") && localStorage.getItem("address");
         if (isAuth) {
           next();
         } else {

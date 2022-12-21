@@ -1,7 +1,5 @@
-import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import { useCart } from "./cart";
-
 
 export interface Address {
   cep: string;
@@ -93,6 +91,6 @@ export const useSteps = defineStore({
         email: "",
         phone: "",
       };
-    }
+    },
   },
 });

@@ -26,6 +26,7 @@ import { useCart } from "@/stores/cart.js";
 import type { Product } from "@/stores/product";
 
 export default {
+  name: "CardBlock",
   setup() {
     const data = useCart();
     return data;

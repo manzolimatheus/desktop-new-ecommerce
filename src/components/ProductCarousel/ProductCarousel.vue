@@ -83,7 +83,6 @@ export default {
   -ms-overflow-style: none;
 }
 
-
 .products::-webkit-scrollbar {
   display: none;
 }
@@ -95,7 +94,7 @@ export default {
 }
 
 button {
-  background: white;;
+  background: white;
   border: none;
   height: 100%;
   width: auto;

@@ -5,8 +5,7 @@
 </template>
 
 <script>
-
-import data from "~/assets/db/db.json"
+import data from "~/assets/db/db.json";
 
 export default {
   data() {
