@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import type { type Product } from "./product.js";
+import type { Product } from "./product.js";
 
 export interface Cart {
   products: Product[];

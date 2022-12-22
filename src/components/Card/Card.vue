@@ -81,7 +81,7 @@ export default {
         price: this.price,
         featuredText: this.featuredText,
         promoPrice: this.promoPrice,
-      };
+      } as Product;
 
       this.addToCart(product);
 

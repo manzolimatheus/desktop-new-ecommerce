@@ -57,7 +57,7 @@ export default {
     removeProduct(id: number): void {
       const product: Product = this.cart.products.find(
         (product: Product) => product.id === id
-      );
+      ) as Product;
 
       if (product) {
         this.removeFromCart(product);
