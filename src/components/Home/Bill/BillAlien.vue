@@ -47,4 +47,8 @@ export default {
     transform: translate(0, 0);
   }
 }
+
+img {
+  object-fit: contain;
+}
 </style>
